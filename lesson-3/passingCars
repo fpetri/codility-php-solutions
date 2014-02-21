@@ -1,0 +1,30 @@
+<?php
+
+//@todo fix the one failed test
+
+function solution($A) {
+    // safe defaults
+    $multiplier=1;
+    $sum=0;
+    $count=count($A);
+    
+    $first=$A[0];
+    for($i=1;$i<$count;$i++)
+    {
+            if($sum >1000000000)
+                   return -1;
+           if($A[$i] !== $first)
+           {
+            //   $change*=$multiplier;
+               $sum += $multiplier;
+               
+           }
+           if($A[$i]==$first )
+           {
+             $multiplier++;
+           }
+    }
+    
+    return $sum;
+    
+}
